@@ -13,6 +13,13 @@ end: "top center",
 });
 
 /* Scroll REveal */
+ScrollReveal({
+  reset: true,
+  distance: '60px',
+  duration: 500,
+  delay: 0
+})
+
 ScrollReveal().reveal('.text-box');
 ScrollReveal().reveal('.demo-phone');
 ScrollReveal().reveal('.image-container');
