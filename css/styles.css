@@ -120,6 +120,7 @@ transform: rotate(180deg); /* Flecha original */
 display: flex;
 justify-content: center;
 align-items: center;
+gap: 100px;
 }
 
 .carousel-controls button {
@@ -135,7 +136,7 @@ transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
 
 .carousel-controls button {
 width: 100px;
-height: 40px;
+height: 80px;
 object-fit: contain;
 }
 
@@ -149,6 +150,12 @@ object-fit: contain;
       padding-top: 50px;
       padding-bottom: 50px;
   }
+
+  .carousel-controls button {
+    width: 50px;
+    height: 40px;
+    object-fit: contain;
+    }
 }
 
 /* Sección de Contacto */
@@ -238,7 +245,7 @@ object-fit: contain;
 @media screen and (max-width: 1100px) {
   .image-container {
     width: 100%; /* Ocupar todo el ancho disponible */
-    max-width: 50vw;
+    max-width: 85vw;
     height: auto;
   }
 }
