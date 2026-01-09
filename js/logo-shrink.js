@@ -2,7 +2,7 @@
 ScrollTrigger.create({
   animation: gsap.from(".logo", {
       y: "50vh",
-      scale: 5,
+      scale: 3,
       yPercent: -50,
   }),
   scrub: true,

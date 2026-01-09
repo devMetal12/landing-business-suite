@@ -16,6 +16,16 @@ src: url('../fonts/Desolator.otf');
   src: url('../fonts/Amodified.otf');
   }
 
+@font-face {
+  font-family: InputMono;
+  src: url('../fonts/InputMono.ttf');
+  }
+
+@font-face {
+  font-family: TenbyFive;
+  src: url('../fonts/tenby-five.otf');
+  }
+
 .section{
   height: fit-content;
   padding-top: 100px;
@@ -23,46 +33,75 @@ src: url('../fonts/Desolator.otf');
 }
 
 h1{
-  font-family: Desolator;
+  font-family: InputMono;
+
 }
 
+
 h2, h3, h4, h5 {
-  font-family: Desolator;
+  font-family: InputMono;
 }
 
 p {
-  font-family: "Rubik", serif;
+  /*font-family: "Rubik", serif;*/
+  font-family: TenbyFive;
   text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+}
+
+.bg-video{
+  filter: brightness(0.55); 
 }
 
 /* DEMO7INTRODUCTION */
 .demo{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   padding: 100px;
   background-image: url("../assets/background-white-green.svg");
+  background-color: #2d2a26;
   background-position: right;
   background-repeat: no-repeat;
 }
 
-.text-box{
+.text-box, .text-box-modules{
   width: 50%;
   text-align: left;
   display: flex;
     flex-direction: column;
     align-items: center;
+    background: rgba(30, 28, 25, 0.6); /* 60% opacidad */
+    padding: 10px;
+    border-radius: 20px;
+
+    height: auto;
 }
 
-.text-box > h2{
-  padding: 20px;
-  font-size: 4vw;
+.text-box-modules{
+  background: rgba(129, 143, 120, 0.13); /* 60% opacidad */
 }
 
-.text-box > p{
+.text-box > h2, .text-box-modules > h2{
   padding: 20px;
-  font-size: 20px;
+  font-size: 2vw;
+  text-align: center;
+  padding: 0;
+  color: white;
+}
+
+.text-box > p, .text-box-modules > p{
+  padding: 10px;
+  font-size: 18px;
+  text-align: justify;
+  color: white;
+}
+
+.text-box-modules > p {
+  color: #1e1c19;
 }
 
 .demo-phone{
@@ -72,9 +111,6 @@ p {
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-
-
-
 
 @media (max-width: 1100px) {
   .demo{
@@ -94,14 +130,12 @@ p {
       width: 100%;
   }
 
-  .logo {
-    max-width: 100px;
-  }
-
   .text-box > h2{
-      font-size: 5vw;
+    font-size: 3.5vw;
   }
 }
+
+
 
 
 /* MOdules */
@@ -109,7 +143,7 @@ p {
   background-color: #c3d417;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   padding: 100px;
 }
@@ -144,15 +178,15 @@ p {
   }
   
   .carousel-controls button {
-  width: 120px;
-  height: 100px;
-  object-fit: contain;
+    font-size: 3vw;
+    object-fit: contain;
+    width: 15%;
   }
 
   #module-title{
-    font-size: 3vw;
+    font-size: 2rem;
     text-align: center;
-    width: 250px;
+    width: 70%;
     padding: 0px;
 }
 .carousel-controls button:focus {
@@ -170,9 +204,12 @@ p {
         padding-bottom: 50px;
     }
 
+    .text-box-modules{
+      width: 100%;
+    }
+
     .carousel-controls button {
-      width: 100px;
-      height: 80px;
+      font-size: 35px;
       object-fit: contain;
       }
     
@@ -186,7 +223,6 @@ p {
         padding: 20px;
         font-size: 5vw;
         text-align: center;
-        width: 230px;
     }
     
     .carousel-controls {
@@ -214,6 +250,13 @@ p {
   padding: 100px;
   color: #fff;
 }
+.contact > p {
+  font-size: 18px;
+}
+.contact > h1 {
+  text-align: center;
+}
+
 
 /* Estilos del formulario */
 #info-form {
@@ -269,8 +312,12 @@ p {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 540px; /* Tamaño similar a un teléfono */
-  height: auto; /* Alto del teléfono */
+
+  width: 50%;
+  height: auto;
+  max-width: 540px;
+  border-radius: 20px;
+  
   border-radius: 10px; /* Bordes redondeados para simular un teléfono */
   /*border: 8px solid black; /* Marco del celular */
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Sombra para efecto realista */
@@ -308,9 +355,6 @@ p {
     padding-bottom: 50px;
   }
 
-  .modules{
-    flex-direction: column;
-  }
 
   #info-form {
     max-width: 90%;

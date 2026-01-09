@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/scroll-cards.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/primeicons@7.0.0/primeicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -34,7 +35,7 @@
     </div>
     <section>
     <div class="container">
-      <video class="bg-video "autoplay loop muted playsinline>
+      <video class="bg-video" autoplay loop muted playsinline>
         <source src="./assets/stock-video.mp4" type="video/mp4">
       </video>
     </section>
@@ -51,23 +52,24 @@
       </div>
 
       <div class="section modules" id="modules">
-        <div class="text-box">
-          <button class="cta-button" type="submit">CALL TO ACTION</button>
-          <p id="module-description">Equipado con características y módulos para facilitar el flujo de tu negocio</p>
-          
+
+        <div class="image-container">
+          <img id="module-image" src="./assets/demo.png" alt="Demo Image">
+        </div>
+        <div class="text-box-modules">
+
           <div class="carousel-controls">
             <button id="prev-btn">
-              <img src="./assets/arrow.svg" alt="◀">
+               <i class="pi pi-angle-left"></i>
             </button>
             <h2 id="module-title">Features</h2>
             <button id="next-btn">
-              <img src="./assets/arrow.svg" alt="▶">
+               <i class="pi pi-angle-right"></i>
             </button>
           </div>
-        </div>
-      
-        <div class="image-container">
-          <img id="module-image" src="./assets/demo.png" alt="Demo Image">
+          <p id="module-description">Equipado con características y módulos para facilitar el flujo de tu negocio</p>
+          
+          
         </div>
       </div>
 
