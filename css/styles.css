@@ -148,6 +148,7 @@ p {
   .demo{
       flex-direction: column;
       padding: 0px;
+      
       padding-top: 50px;
       padding-bottom: 50px;
       background-position: right;
@@ -160,6 +161,7 @@ p {
 
   .text-box{
       width: 100%;
+      margin-bottom: 20px;
   }
 
   .text-box > h2{
@@ -239,6 +241,7 @@ p {
 
     .text-box-modules{
       width: 100%;
+      
     }
 
     .carousel-controls button {
