@@ -55,7 +55,11 @@ p {
 }
 
 .intro{
-  border-radius: 25px ;
+  position: relative;
+  border-radius: 50px ;
+  height: 100vh;
+  margin-bottom: 5px;
+  overflow: hidden;
 }
 
 .bg-video{
