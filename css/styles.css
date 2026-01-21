@@ -254,6 +254,7 @@ p {
 
 .erp-tab.active {
   filter: brightness(1.2);
+  z-index: 5;
   transform: translateX(15px);
 }
 
@@ -300,6 +301,11 @@ p {
   .erp-tab:hover {
     transform: translateY(-12px);
     z-index: 10;
+  }
+
+  .erp-tab.active {
+    filter: brightness(1.2);
+    transform: translateY(-15px);
   }
 
   /* texto vertical sigue funcionando */
