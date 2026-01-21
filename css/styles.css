@@ -1,5 +1,6 @@
 html{
   scroll-behavior: smooth;
+  
 }
 @font-face {
 font-family: Akira;
@@ -26,15 +27,6 @@ src: url('../fonts/Desolator.otf');
   src: url('../fonts/tenby-five.otf');
   }
 
-.section{
-  height: fit-content;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  border-radius: 50px;
-}
-
 h1{
   font-family: InputMono;
 
@@ -42,7 +34,7 @@ h1{
 
 
 h2, h3, h4, h5 {
-  font-family: InputMono;
+  font-family: TenbyFive;
 }
 
 p {
@@ -54,11 +46,14 @@ p {
   opacity: 0.9;
 }
 
+.section{
+  height: fit-content;
+  height: 100vh;
+}
+
 .intro{
   position: relative;
-  border-radius: 50px ;
   height: 100vh;
-  margin-bottom: 5px;
   overflow: hidden;
 }
 
@@ -72,398 +67,339 @@ p {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 100px;
-  background-color: #2d2a26;
+  background-image: url("../assets/background-demo-flat.jpg");
+  background-size: 80% 100vh;
+  background-position: right;
   position: relative;           /* IMPORTANTE */
   overflow: hidden;             /* opcional: ocultar si se sale */
 }
 
-.demo::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 700px;                 /* tamaño del PNG/SVG */
-  height: 700px;
-  background: url("../assets/background-white-green.svg") no-repeat top right;
-  background-size: contain;     /* o '100% 100%' si quieres forzar */
-  pointer-events: none;         /* para que no moleste al usuario */
+
+
+.demo-text{
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #43403b;
+  border-radius: 0 80px 80px 0;
 }
 
-@media (max-width: 1000px) {
-  .demo::before {
-    width: 500px;                 /* tamaño del PNG/SVG */
-  height: 500px;
-  }
+.text-box{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: space-evenly;
+  align-items: start;
 }
 
-@media (max-width: 600px) {
-  .demo::before {
-    width: 300px;                 /* tamaño del PNG/SVG */
-  height: 300px;
-  }
+.text-box > h2{
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: start;
+  padding: 20px;
+  color: white;
+  
 }
 
-.text-box, .text-box-modules{
-  width: 50%;
+.text-box > p{
   text-align: left;
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(30, 28, 25, 0.6); /* 60% opacidad */
-    padding: 10px;
-    border-radius: 20px;
-
-    height: auto;
-}
-
-.text-box-modules{
-  background: rgba(129, 143, 120, 0.13); /* 60% opacidad */
-}
-
-.text-box > h2, .text-box-modules > h2{
-  padding: 20px;
-  font-size: 2vw;
-  text-align: center;
-  padding: 0;
-  color: white;
-}
-
-.text-box > p, .text-box-modules > p{
-  padding: 10px;
-  font-size: 18px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(30, 28, 25, 0.6); /* 60% opacidad */
+  border-radius: 20px;
+  padding: 25px;
+  font-size: 25px;
   text-align: justify;
   color: white;
 }
 
-.text-box-modules > p {
-  color: #1e1c19;
+.demo-container{
+  height: 100%;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+
 
 .demo-phone{
   width: auto;
   height: auto;
-  max-width: 540px;
+  max-width: 80%;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+
+
+
 @media (max-width: 1100px) {
   .demo{
       flex-direction: column;
-      padding: 0px;
-      
-      padding-top: 50px;
-      padding-bottom: 50px;
-      background-position: right;
-      background-size: contain;
+      height: 100vh;
+      background-size: 100% 100vh;
   }
 
-  .demo-phone{
-    max-height: 50vw;
+  .demo-container, .demo-text{
+    width: 100%;
+    height: 50%;
   }
-
-  .text-box{
-      width: 100%;
-      margin-bottom: 20px;
+  
+  .demo-text{
+    border-radius: 0 0 80px 80px;
   }
 
   .text-box > h2{
-    font-size: 3.5vw;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .text-box > p{
+    font-size: 1rem;
+    text-align: center;
+    padding: 15px;
   }
 }
 
+/* modules */
 
-
-
-/* MOdules */
 .modules{
-  background-color: #c3d417;
+  background-color: #2d2a26;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 100px;
 }
 
-.text-box > h3{
-  padding: 20px;
-}
 
-/* carousel controls */
-#prev-btn img {
-  transform: scaleX(-1); /* Flecha original */
-  }
 
-.carousel-controls {
+/* Contenedor de las tabs tipo tarjetas */
+.erp-tabs {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 20px;
-  color: #2d2a26;
-  width: 100%;
-  }
-  
-  .carousel-controls button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-  width: 80px;
-  }
-  
-  .carousel-controls button:hover {
-  transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
-  }
-  
-  .carousel-controls button {
-    font-size: 3vw;
-    object-fit: contain;
-    width: 15%;
-  }
-
-  #module-title{
-    font-size: 2rem;
-    text-align: center;
-    width: 70%;
-    padding: 0px;
-}
-.carousel-controls button:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-
-@media (max-width: 1000px) {
-    .modules{
-        width: 100%;
-        flex-direction: column;
-        padding: 0;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-
-    .text-box-modules{
-      width: 100%;
-      
-    }
-
-    .carousel-controls button {
-      font-size: 35px;
-      object-fit: contain;
-      }
-    
-      #module-title{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      #module-title{
-        padding: 20px;
-        font-size: 5vw;
-        text-align: center;
-    }
-    
-    .carousel-controls {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      }
-}
-
-@media (max-width: 1000px) {
-
-  .carousel-controls {
-    gap: 0px;
-    }
-}
-
-/* Sección de Contacto */
-.contact {
-  background-color: #2d2a26;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 100px;
-  color: #fff;
-}
-.contact > p {
-  font-size: 18px;
-}
-.contact > h1 {
-  text-align: center;
-}
-
-
-/* Estilos del formulario */
-#info-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 400px;
-}
-
-#info-form label {
-  font-family: "Rubik", serif;
-  font-size: 16px;
-  margin-top: 10px;
-  color: #fff;
-}
-
-#info-form input,
-#info-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #000;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-#info-form button {
-  margin-top: 20px;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#info-form button:hover {
-  background-color: #444;
-}
-
-.video-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin: 20px 0;
-}
-
-/* Ajuste del video */
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-
   width: 50%;
-  height: auto;
-  max-width: 540px;
-  border-radius: 20px;
+  height: 100%;
+  justify-content: start;
+  align-items: center;
+  gap: 0;                 /* Las vamos a solapar con margin negativo */
+  padding: 0;
+  position: relative;
+  font-family: TenbyFive;
+}
+
+/* Cada tab como una “tarjeta” vertical */
+.erp-tab {
+  width: 300px;            /* ancho de la tarjeta */
+  height: 100%;          /* alto de la tarjeta */
+  background: #2d2a26;
+  border-radius: 0 25px 25px 0;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
   
+  /* Clave: hacer que se vean apiladas */
+  margin-left: -25px;     /* solapado entre tarjetas */
+  position: relative;
+}
+
+/* La primera que no se solape hacia atrás */
+.erp-tab:first-child {
+  margin-left: 0;
+}
+
+/* Texto vertical dentro de la tarjeta */
+.erp-tab span {
+  writing-mode: vertical-rl;   /* texto vertical */
+  text-orientation: mixed;
+  transform: rotate(180deg);   /* para que se lea de abajo hacia arriba en vez de cabeza abajo */
+  color: #2d2a26;
+  font-size: 2rem;
+  font-weight: 100;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Efecto hover: se levanta un poco y se destaca */
+.erp-tab:hover {
+  transform: translateX(14px);
+  z-index: 10;                 /* se pone encima de las otras */
+  box-shadow: 0 18px 30px rgba(0,0,0,0.35);
+  filter: brightness(1.1);
+}
+
+/* Opcional: resaltar una tab “activa” con color primario */
+.erp-tab.active,
+.erp-tab:focus-visible {
+  outline: none;
+  box-shadow: 0 18px 30px rgba(0,0,0,0.5);
+  background: #c3d417;        /* verde vivo */
+}
+
+.erp-tab.active span,
+.erp-tab:focus-visible span {
+  color: #2d2a26;
+}
+
+.erp-tab.active {
+  filter: brightness(1.2);
+  transform: translateX(15px);
+}
+
+.erp-tab { margin-left: -30px; }  /* menos solapado */
+
+.erp-tab:nth-child(1) { background: #f8ee7a; }
+.erp-tab:nth-child(2) { background: #faed63; }
+.erp-tab:nth-child(3) { background: #f9ec58; }
+.erp-tab:nth-child(4) { background: #e3e14d; }
+.erp-tab:nth-child(5) { background: #d0da4c; }
+.erp-tab:nth-child(6) { background: #bad14d; }
+.erp-tab:nth-child(7) { background: #a4c84b; }
+.erp-tab:nth-child(8) { background: #87bd4d; }
+.erp-tab:nth-child(9) { background: #87bd4d; }
+
+@media (max-width: 1100px) {
+
+  .modules{
+    flex-direction: column;
+  }
+
+  .erp-tabs {
+    width: 100%;
+    height: 50%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .erp-tab {
+    width: 100%;           /* más estrechas en vertical */
+    height: 200px;          /* o auto si quieres */
+    margin-left: 0;
+    margin-top: -30px;      /* aquí se solapan ahora verticalmente */
+    border-radius: 25px 25px 0 0; /* puede quedar igual */
+    transform: none;
+  }
+
+  .erp-tab:first-child {
+    margin-top: 0;
+  }
+
+  /* hover en vertical */
+  .erp-tab:hover {
+    transform: translateY(-12px);
+    z-index: 10;
+  }
+
+  /* texto vertical sigue funcionando */
+  .erp-tab span {
+    writing-mode: horizontal-tb;
+    transform: rotate(0);
+    font-size: 1.4rem;
+  }
+
+  .erp-tab { margin-left: 0px; margin-top: -10px; }  /* menos solapado */
+}
+
+
+.modules-text{
+  width: 50%;
+  height: 100%;
+}
+
+.info-modules-container{
+  height: 100%;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+.text-box-modules{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-box-modules > p{
+    text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  font-size: 25px;
+  text-align: justify;
+  color: white;
+}
+
+.text-box-modules p {
+  opacity: 1;
+  transition: opacity .35s ease;
+}
+
+.modules-phone{
+  width: auto;
+  height: auto;
+  max-width: 80%;
   border-radius: 10px; /* Bordes redondeados para simular un teléfono */
   /*border: 8px solid black; /* Marco del celular */
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Sombra para efecto realista */
   overflow: hidden; /* Asegura que la imagen no sobresalga */
   background-color: white; /* Fondo para simular una pantalla apagada */
+   opacity: 1;
+  transition: opacity .35s ease;
 }
 
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Ajusta la imagen sin distorsión */
-  /*transition: opacity 0.3s ease-in-out;*/
-  margin: 0;
-}
-
-
-/* Ajuste responsivo */
-@media screen and (max-width: 1100px) {
-  .image-container {
-    width: 100%; /* Ocupar todo el ancho disponible */
-    max-width: 85vw;
-    height: auto;
-  }
-}
-
-
-
-/* Ajustes para móviles */
 @media (max-width: 1100px) {
-  .contact {
+  .modules-text{
     width: 100%;
+    height: 50%;
+    display: flex;
     flex-direction: column;
-    padding: 0;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    justify-content: center;
+    align-items: center;
   }
 
-
-  #info-form {
-    max-width: 90%;
+  .modules-phone{
+    width: auto;
+    height: auto;
+    max-height: 50%;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
 
-  .modules > .text-box{
-    margin-bottom: 20px;
+  .info-modules-container{
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+    gap: 1rem;
+  }
+
+  .text-box-modules > p{
+    font-size: 1rem;
+    text-align: center;
+    padding: 15px;
   }
 }
 
-  /* CTA BUtoons */
 
-  .cta-button {
-    width: 100%;
-    margin-top: 20px;
-    background: linear-gradient(135deg, #2d2a26, #1e1c19); /* Degradado negro/gris oscuro */
-    color: #ffffff; /* Texto blanco para máximo contraste */
-    border: none;
-    padding: 15px 30px;
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
-    font-family: "Rubik", sans-serif;
-  }
 
-  @media (max-width: 1000px) {
-    .cta-button{
-      width: 50%;
-    }
-  }
-  
-  /* Efecto hover: Cambio de color y sombra intensa */
-  .cta-button:hover {
-    background: linear-gradient(135deg, #000000, #2d2a26);
-    color: #c3d417; /* Cambia el texto a verde para resaltar */
-    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.5);
-    transform: scale(1.05);
-  }
-  
-  /* Efecto de "presión" al hacer clic */
-  .cta-button:active {
-    transform: scale(0.95);
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Animación de iluminación lateral */
-  .cta-button::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: rgba(255, 255, 255, 0.1);
-    transform: rotate(25deg);
-    transition: all 0.5s ease-in-out;
-  }
-  
-  .cta-button:hover::before {
-    left: 120%;
-  }
-  
 
   .contact-button {
     margin-top: 20px;

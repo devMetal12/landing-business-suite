@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://plugin.powerschool.pearson.com"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd"
+   name="PS_Edutech_Dataaccess"
+   version="1.0"
+   description="Basic Data Access Plugin for EdutechApps">
+   <oauth></oauth>
+   <publisher name="Basic Data">
+      <contact email="jorge.potosme@edutechca.com" />
+   </publisher>
+   <!-- <permission>
+      <role>admin</role>
+      <capability>access_table_name</capability>
+  </permission> -->
+   <access_request>
+      <field table="STUDENTS" field="ID" access="ViewOnly" />
+      <field table="STUDENTS" field="First_Name" access="ViewOnly" />
+      <field table="STUDENTS" field="Middle_Name" access="ViewOnly" />
+      <field table="STUDENTS" field="Last_Name" access="ViewOnly" />
+      <field table="STUDENTS" field="Grade_Level" access="ViewOnly" />
+      <field table="STUDENTS" field="LastFirst" access="ViewOnly" />
+      <field table="STUDENTS" field="GuardianEmail" access="ViewOnly" />
+      <field table="STUDENTS" field="Gender" access="ViewOnly" />
+
+      <field table="StudentContactAssoc" field="StudentContactAssocID" access="ViewOnly"/>
+      <field table="StudentContactAssoc" field="StudentDCID" access="ViewOnly"/>
+      <field table="StudentContactAssoc" field="PersonID" access="ViewOnly"/>
+
+      <field table="PersonEmailAddressAssoc" field="EmailAddressID" access="ViewOnly"/>
+      <field table="PersonEmailAddressAssoc" field="PersonID" access="ViewOnly"/>
+      <field table="EmailAddress" field="EmailAddress" access="ViewOnly"/>
+      <field table="EmailAddress" field="EmailAddressID" access="ViewOnly"/>
+
+      <field table="Person" field="ID" access="ViewOnly"/> 
+      <field table="Person" field="FirstName" access="ViewOnly"/> 
+      <field table="Person" field="MiddleName" access="ViewOnly"/> 
+      <field table="Person" field="LastName" access="ViewOnly"/> 
+      <field table="Person" field="IsActive" access="ViewOnly"/> 
+      
+      <!-- <field table="GUARDIANSTUDENT" field="GuardianID" access="ViewOnly" />
+      <field table="GUARDIANSTUDENT" field="GuardianStudentID" access="ViewOnly" />
+      <field table="GUARDIANSTUDENT" field="StudentsDCID" access="ViewOnly" />
+
+      <field table="GUARDIANNOTIFICATIONEMAIL" field="GuardianNotificationEmailID" access="ViewOnly"/>
+      <field table="GUARDIANNOTIFICATIONEMAIL" field="GuardianStudentID" access="ViewOnly"/>
+      <field table="GUARDIANNOTIFICATIONEMAIL" field="NotificationEmail" access="ViewOnly"/>
+      -->
+   </access_request>
+</plugin>

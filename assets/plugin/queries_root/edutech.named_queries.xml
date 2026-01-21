@@ -1,0 +1,143 @@
+<queries>
+  <query name="com.edutech.da.getstudents" flattened="true">
+    <columns>
+      <column column="students.ID">id</column>
+      <column column="students.First_Name">firstname</column>
+      <column column="students.Middle_Name">Middle_Name</column>
+      <column column="students.Last_Name">lastname</column>
+      <column column="students.Grade_Level">gradelevel</column>
+      <column column="students.LastFirst">lastfirst</column>
+      <column column="students.GuardianEmail">GuardianEmail</column>
+      <column column="students.Gender">Gender</column>
+    </columns>
+    <sql><![CDATA[
+        select 
+          ID,
+          First_Name,
+          Middle_Name,
+          Last_Name,
+          Grade_Level,
+          LastFirst,
+          GuardianEmail,
+          Gender
+      from students order by First_Name
+    ]]></sql>
+  </query>
+  <!-- Define more queries here -->
+  <query name="com.edutech.da.getpersonstudents"  flattened="true">
+    <columns>
+        <column column="StudentContactAssoc.StudentContactAssocID">StudentContactAssocID</column>
+        <column column="StudentContactAssoc.StudentDCID">StudentDCID</column>
+        <column column="StudentContactAssoc.PersonID">PersonID</column>
+    </columns>
+    <sql><![CDATA[
+      SELECT
+        StudentContactAssoc.StudentContactAssocID,
+        StudentContactAssoc.StudentDCID,
+        StudentContactAssoc.PersonID
+      FROM StudentContactAssoc
+      order by StudentContactAssoc.StudentContactAssocID
+    ]]></sql>
+  </query>
+  <query name="com.edutech.da.getPersonsEmail" flattened="true">
+    <columns>
+      <column column="PersonEmailAddressAssoc.EmailAddressID">EmailAddressID</column>
+      <column column="PersonEmailAddressAssoc.PersonID">PersonID</column>
+      <column column="EmailAddress.EmailAddress">EmailAddress</column>
+    </columns>
+    <sql><![CDATA[
+      SELECT
+        PersonEmailAddressAssoc.EmailAddressID,
+        PersonEmailAddressAssoc.PersonID,
+        EmailAddress.EmailAddress
+      FROM PersonEmailAddressAssoc 
+      JOIN EmailAddress ON EmailAddress.EmailAddressID = PersonEmailAddressAssoc.EmailAddressID
+      order by PersonEmailAddressAssoc.PersonID
+    ]]></sql>
+  </query>
+  <query name="com.edutech.da.getPersons" flattened="true">
+    <columns>
+      <column column="PERSON.ID">ID</column>
+      <column column="PERSON.FirstName">FirstName</column>
+      <column column="PERSON.MiddleName">MiddleName</column>
+      <column column="PERSON.LastName">LastName</column>
+      <column column="PERSON.IsActive">IsActive</column>
+    </columns>
+    <sql><![CDATA[
+      select
+        PERSON.ID,
+        PERSON.FirstName,
+        PERSON.MiddleName,
+        PERSON.LastName,
+        PERSON.IsActive
+      from PERSON 
+      order by PERSON.ID
+  ]]></sql>
+  </query>
+  <!-- 
+  <query name="com.edutech.da.getguardianstudents" flattened="true">
+    <columns>
+      <column column="GuardianStudent.GuardianStudentID">GuardianStudentID</column>
+      <column column="GuardianStudent.GuardianID">GuardianID</column>
+      <column column="GuardianStudent.StudentsDCID">StudentsDCID</column>
+    </columns>
+    <sql><![CDATA[
+      select
+        GuardianID,
+        StudentsDCID,
+        GuardianStudentID
+      from GuardianStudent order by GuardianID
+  ]]></sql>
+  </query>
+  <query name="com.edutech.da.getguardianstudentsname" flattened="true">
+    <columns>
+      <column column="GuardianStudent.GuardianID">GuardianStudent_GuardianID</column>
+      <column column="GuardianStudent.GuardianStudentID">GuardianStudent_GuardianStudentID</column>
+      <column column="GuardianStudent.StudentsDCID">GuardianStudent_StudentsDCID</column>
+
+      <column column="students.First_Name">students_First_Name</column>
+      <column column="students.Last_Name">students_Last_Name</column>
+      <column column="students.Grade_Level">students_Grade_Level</column>
+      <column column="students.LastFirst">students_lastfirst</column>
+
+      <column column="Guardian.FirstName">Guardian_FirstName</column>
+      <column column="Guardian.MiddleName">Guardian_MiddleName</column>
+      <column column="GuardianNotificationEmail.NotificationEmail">Guardian_Email</column>
+
+    </columns>
+    <sql><![CDATA[
+      SELECT
+      GuardianStudent.GuardianID AS GuardianStudent_GuardianID,
+      GuardianStudent.GuardianStudentID AS GuardianStudent_GuardianStudentID,
+      GuardianStudent.StudentsDCID AS GuardianStudent_StudentsDCID,
+      students.First_Name AS students_First_Name,
+      students.Last_Name AS students_Last_Name,
+      students.Grade_Level AS students_Grade_Level,
+      students.LastFirst AS lastfirst,
+      Guardian.FirstName AS Guardian_FirstName,
+      Guardian.MiddleName AS Guardian_MiddleName,
+      GuardianNotificationEmail.NotificationEmail as NotificationEmail
+    FROM GuardianStudent
+      JOIN Guardian ON GuardianStudent.GuardianID = Guardian.GuardianID
+      JOIN students ON GuardianStudent.StudentsDCID = students.ID
+      JOIN GuardianNotificationEmail ON GuardianStudent.GuardianStudentID = GuardianNotificationEmail.GuardianStudentID
+    ORDER BY GuardianStudent.GuardianID
+  ]]></sql>
+  </query>
+  <query name="com.edutech.da.getguardiansemail" flattened="true">
+    <columns>
+      <column column="GuardianStudent.GuardianID">GuardianStudent_GuardianID</column>
+      <column column="GuardianNotificationEmail.NotificationEmail">Guardian_Email</column>
+
+    </columns>
+    <sql><![CDATA[
+      SELECT
+      GuardianStudent.GuardianID AS GuardianStudent_GuardianID,
+      GuardianNotificationEmail.NotificationEmail as NotificationEmail
+    FROM GuardianStudent
+      JOIN GuardianNotificationEmail ON GuardianStudent.GuardianStudentID = GuardianNotificationEmail.GuardianStudentID
+    ORDER BY GuardianStudent.GuardianID
+  ]]></sql>
+  </query>
+  -->
+</queries>    
