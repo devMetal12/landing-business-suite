@@ -11,6 +11,18 @@ ScrollTrigger.create({
   endTrigger: ".content",
   end: "top center",
   });
+
+  // desaparecer nav con scroll
+ScrollTrigger.create({
+  animation: gsap.to(".nav", {
+    opacity: 0,
+    y: -50,
+  }),
+  scrub: true,
+  trigger: ".content",
+  start: "top bottom",
+  end: "center center",
+});
   
   /* Scroll REveal */
   ScrollReveal({
