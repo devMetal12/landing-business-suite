@@ -214,7 +214,6 @@ p {
   height: 100%;          /* alto de la tarjeta */
   background: #2d2a26;
   border-radius: 0 25px 25px 0;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
   display: flex;
   align-items: center;
   justify-content: center;
