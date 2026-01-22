@@ -31,14 +31,21 @@ body {
   background: rgba(45, 42, 38, 0.6);
 }
 
+@media (max-width: 1100px) {
+  .items-left, .items-right{
+    width: 25%;
+  }
+}
+
 a {
   text-decoration: none;
   text-transform: uppercase;
   color: white;
   font-family: TenbyFive;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1rem;
 }
+
 
 .logo-container {
   position: relative;
