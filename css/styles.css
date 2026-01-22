@@ -202,9 +202,9 @@ p {
     #2d2a26,
     #d0da4c,
     #e3e14d,
-    #f9ec58,
-    #faed63,
-    #f8ee7a
+    #f5e752,
+    #f7eb6b,
+    #f1e98b
   );
 }
 
@@ -283,9 +283,9 @@ p {
 
 .erp-tab { margin-left: -30px; }  /* menos solapado */
 
-.erp-tab:nth-child(1) { background: #f8ee7a; }
-.erp-tab:nth-child(2) { background: #faed63; }
-.erp-tab:nth-child(3) { background: #f9ec58; }
+.erp-tab:nth-child(1) { background: #f8ef8d; }
+.erp-tab:nth-child(2) { background: #f7eb66; }
+.erp-tab:nth-child(3) { background: #f7e94e; }
 .erp-tab:nth-child(4) { background: #e3e14d; }
 .erp-tab:nth-child(5) { background: #d0da4c; }
 .erp-tab:nth-child(6) { background: #bad14d; }
