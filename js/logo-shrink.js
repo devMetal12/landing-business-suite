@@ -16,6 +16,7 @@ ScrollTrigger.create({
 ScrollTrigger.create({
   animation: gsap.to(".nav", {
     opacity: 0,
+    display: "none"
   }),
   scrub: true,
   trigger: ".content",
