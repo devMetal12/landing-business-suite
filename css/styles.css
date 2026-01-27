@@ -228,7 +228,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: end;
-  padding-right: 1rem;
+  padding-right: 1vw;
   cursor: pointer;
   transition:
     transform 0.25s ease,
