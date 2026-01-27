@@ -27,6 +27,12 @@ src: url('../fonts/Desolator.otf');
   src: url('../fonts/tenby-five.otf');
   }
 
+@font-face {
+  font-family: BogitaMono;
+  src: url('../fonts/BogitaMono-Medium.otf');
+}
+
+
 h1{
   font-family: InputMono;
 
@@ -34,14 +40,14 @@ h1{
 
 
 h2, h3, h4, h5 {
-  font-family: TenbyFive;
+  font-family: "tenby-stencil", sans-serif;
 }
 
 p {
   /*font-family: "Rubik", serif;*/
-  font-family: TenbyFive;
+  font-family: "tenby-five", sans-serif;
   text-align: center;
-  letter-spacing: 0.04em;
+  /* letter-spacing: 0.04em; */
 }
 
 .section{
@@ -88,14 +94,13 @@ p {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 5rem;
   justify-content: space-evenly;
-  align-items: start;
+  align-items: center;
 }
 
 .text-box > h2{
-   font-size: clamp(1rem, 1.4rem + 1.6vw, 3rem);
+  font-size: clamp(0.8rem, 1rem + 3vw, 5rem) !important;
   font-weight: bold;
   text-align: start;
   padding: 20px;
@@ -103,12 +108,14 @@ p {
   
 }
 
+
 .text-box > p{
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-weight: lighter;
   background: rgba(30, 28, 25, 0.6); /* 60% opacidad */
   border-radius: 20px;
   padding: 25px;
@@ -161,6 +168,11 @@ p {
     max-height: 70%;
   }
 
+  .text-box{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .text-box > h2{
     text-align: center;
   }
@@ -195,7 +207,6 @@ p {
   gap: 0;                 /* Las vamos a solapar con margin negativo */
   padding: 0;
   position: relative;
-  font-family: TenbyFive;
   background: linear-gradient(
     to left,
     #2d2a26,
@@ -216,7 +227,8 @@ p {
   border-radius: 0 25px 25px 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
+  padding-right: 1rem;
   cursor: pointer;
   transition:
     transform 0.25s ease,
@@ -245,13 +257,14 @@ p {
 .erp-tab span {
   writing-mode: vertical-rl;   /* texto vertical */
   text-orientation: mixed;
+  font-family: "tenby-five", sans-serif;
   transform: rotate(0deg);   /* para que se lea de abajo hacia arriba en vez de cabeza abajo */
   color: #2d2a26;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 100;
-  letter-spacing: 0.12em;
+  /* letter-spacing: 0.1em; */
   text-align: center;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 /* Efecto hover: se levanta un poco y se destaca */
@@ -312,6 +325,7 @@ p {
   .erp-tabs {
     width: 100%;
     height: 50%;
+    padding-right: 0;
     flex-direction: column-reverse;
     justify-content: flex-start;
     align-items: flex-start;
@@ -335,8 +349,8 @@ p {
     border-radius: 25px 25px 0 0; /* puede quedar igual */
     transform: none;
     position: relative;
-
     padding-top: 0.5rem;
+    padding-right: 0;
     align-items: start;
     justify-content: center;
   }
@@ -360,7 +374,7 @@ p {
   .erp-tab span {
     writing-mode: horizontal-tb;
     transform: rotate(0);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .erp-tab { margin-left: 0px; margin-top: -20px; }  /* menos solapado */
