@@ -50,6 +50,13 @@ p {
   /* letter-spacing: 0.04em; */
 }
 
+.background{
+  background-image: url("../assets/background-demo-flat.jpg");
+  background-size: 100% 100%;
+  background-position: right;
+  width: 100%;
+}
+
 .section{
   height: fit-content;
   height: 100vh;
@@ -68,12 +75,10 @@ p {
 /* DEMO7INTRODUCTION */
 .demo {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
-  background-image: url("../assets/background-demo-flat.jpg");
-  background-size: 80% 100vh;
-  background-position: right;
+  
   position: relative;           /* IMPORTANTE */
   overflow: hidden;             /* opcional: ocultar si se sale */
 }
@@ -82,12 +87,12 @@ p {
 
 .demo-text{
   flex: 1;
-  height: 100%;
+  height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #43403b;
-  border-radius: 0 80px 80px 0;
+  border-radius: 80px 0px 0px 80px;
 }
 
 .text-box{
@@ -119,14 +124,14 @@ p {
   background: rgba(30, 28, 25, 0.6); /* 60% opacidad */
   border-radius: 20px;
   padding: 25px;
-  font-size: clamp(0.75rem, 0.7rem + 0.8vw, 1.5rem);
+  font-size: clamp(0.75rem, 0.7rem + 0.5vw, 1.5rem);
   text-align: justify;
   color: white;
 }
 
 .demo-container{
   height: 100%;
-  width: 55%;
+  width: 45%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,6 +151,11 @@ p {
 
 
 @media (max-width: 1100px) {
+
+  .content{
+    background-position: center;
+  }
+
   .demo{
       flex-direction: column;
       height: 100vh;
@@ -187,7 +197,7 @@ p {
 /* modules */
 
 .modules{
-  background-color: #2d2a26;
+  /* background-color: #2d2a26; */
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -199,15 +209,16 @@ p {
 
 /* Contenedor de las tabs tipo tarjetas */
 .erp-tabs {
+  background: none;
   display: flex;
   width: 50%;
-  height: 100%;
+  height: 90%;
   justify-content: start;
   align-items: center;
   gap: 0;                 /* Las vamos a solapar con margin negativo */
   padding: 0;
   position: relative;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to left,
     #2d2a26,
     #2d2a26,
@@ -216,14 +227,14 @@ p {
     #f5e752,
     #f7eb6b,
     #f1e98b
-  );
+  ); */
 }
 
 /* Cada tab como una “tarjeta” vertical */
 .erp-tab {
   width: 300px;            /* ancho de la tarjeta */
   height: 100%;          /* alto de la tarjeta */
-  background: #2d2a26;
+  /* background: #2d2a26; */
   border-radius: 0 25px 25px 0;
   display: flex;
   align-items: center;
@@ -260,7 +271,7 @@ p {
   font-family: "tenby-five", sans-serif;
   transform: rotate(0deg);   /* para que se lea de abajo hacia arriba en vez de cabeza abajo */
   color: #2d2a26;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 100;
   /* letter-spacing: 0.1em; */
   text-align: center;
@@ -404,21 +415,24 @@ p {
   align-items: center;
 }
 
-.text-box-modules > p{
-    text-align: left;
+.text-box-modules p{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
   font-size: 25px;
+  padding: 15px;
+  width: 100%;
   text-align: justify;
   color: white;
+  background-color: #2d2a26;
 }
 
 .text-box-modules p {
   opacity: 1;
   transition: opacity .35s ease;
+  text-align: center;
 }
 
 .modules-phone{
