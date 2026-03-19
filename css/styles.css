@@ -53,7 +53,7 @@ p {
 .background{
   background-image: url("../assets/background-demo-flat.jpg");
   background-size: 100% 100%;
-  background-position: right;
+  background-position: center;
   width: 100%;
 }
 
@@ -92,6 +92,8 @@ p {
   justify-content: center;
   align-items: center;
   background-color: #43403b;
+  background: rgba(45, 42, 38, 0.6); /* 🔥 transparencia */
+  backdrop-filter: blur(12px);       /* glass effect */
   border-radius: 80px 0px 0px 80px;
 }
 
@@ -99,7 +101,7 @@ p {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 5rem;
+  padding: 3rem;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -208,114 +210,102 @@ p {
 
 
 /* Contenedor de las tabs tipo tarjetas */
+/* Contenedor de las tabs tipo tarjetas */
 .erp-tabs {
   background: none;
   display: flex;
-  width: 50%;
-  height: 90%;
-  justify-content: start;
-  align-items: center;
-  gap: 0;                 /* Las vamos a solapar con margin negativo */
-  padding: 0;
+  width: 45%;
+  height: 100%;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0;
+  padding-top: 50px;
   position: relative;
+  
+
   /* background: linear-gradient(
-    to left,
-    #2d2a26,
-    #2d2a26,
+    to bottom,
+    #87bd4d,
+    #bad14d,
     #d0da4c,
     #e3e14d,
-    #f5e752,
-    #f7eb6b,
-    #f1e98b
+    #f9ec58,
+    #faed63,
+    #f8ee7a
   ); */
 }
 
-/* Cada tab como una “tarjeta” vertical */
+/* Cada tab como tarjeta */
 .erp-tab {
-  width: 300px;            /* ancho de la tarjeta */
-  height: 100%;          /* alto de la tarjeta */
-  /* background: #2d2a26; */
-  border-radius: 0 25px 25px 0;
+  width: 100%;
+  height: 80px;
+  margin-left: 0;
+  margin-top: -20px;
+  border-radius: 0px 0px 0 0;
   display: flex;
-  align-items: center;
-  justify-content: end;
-  padding-right: 1vw;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0.5rem;
+  padding-right: 0;
   cursor: pointer;
+  position: relative;
+  
+
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
     filter 0.25s ease;
-  
-  /* Clave: hacer que se vean apiladas */
-  /* margin-left: -25px;     solapado entre tarjetas */
-  position: relative;
 }
 
-/* La primera que no se solape hacia atrás */
+/* Primera */
 .erp-tab:first-child {
-  margin-left: 0;
-  box-shadow: 0;
+  margin-top: 0px;
 }
 
-/* Efecto hover: se levanta un poco y se destaca */
-.erp-tab:first-child:hover {
-  z-index: 10;                 /* se pone encima de las otras */
-  box-shadow: unset;
-  filter: brightness(1);
-}
-
-/* Texto vertical dentro de la tarjeta */
-.erp-tab span {
-  writing-mode: vertical-rl;   /* texto vertical */
-  text-orientation: mixed;
-  font-family: "tenby-five", sans-serif;
-  transform: rotate(0deg);   /* para que se lea de abajo hacia arriba en vez de cabeza abajo */
-  color: #2d2a26;
-  font-size: 2rem;
-  font-weight: 100;
-  /* letter-spacing: 0.1em; */
-  text-align: center;
-  /* text-transform: uppercase; */
-}
-
-/* Efecto hover: se levanta un poco y se destaca */
+/* Hover vertical */
 .erp-tab:hover {
-  transform: translateX(14px);
-  z-index: 10;                 /* se pone encima de las otras */
+  transform: translateY(-12px);
+  z-index: 10;
   box-shadow: 0 18px 30px rgba(0,0,0,0.35);
   filter: brightness(1.1);
 }
 
-/* Opcional: resaltar una tab “activa” con color primario */
+/* Activa */
 .erp-tab.active,
 .erp-tab:focus-visible {
   outline: none;
   box-shadow: 0 18px 30px rgba(0,0,0,0.5);
-  background: #c3d417;        /* verde vivo */
-}
-
-.erp-tab.active span,
-.erp-tab:focus-visible span {
-  color: #2d2a26;
+  background: #c3d417;
 }
 
 .erp-tab.active {
   filter: brightness(1.2);
-  z-index: 5;
-  transform: translateX(15px);
+  transform: translateY(-15px);
 }
 
-.erp-tab { margin-left: -30px; }  /* menos solapado */
+/* Texto horizontal */
+.erp-tab span {
+  writing-mode: horizontal-tb;
+  transform: rotate(0);
+  font-family: "tenby-five", sans-serif;
+  color: #2d2a26;
+  font-size: 1.6rem;
+  font-weight: 100;
+  text-align: center;
+}
 
-.erp-tab:nth-child(1) { background: #f8ef8d; }
-.erp-tab:nth-child(2) { background: #f7eb66; }
-.erp-tab:nth-child(3) { background: #f7e94e; }
-.erp-tab:nth-child(4) { background: #e3e14d; }
-.erp-tab:nth-child(5) { background: #d0da4c; }
-.erp-tab:nth-child(6) { background: #bad14d; }
-.erp-tab:nth-child(7) { background: #a4c84b; }
-.erp-tab:nth-child(8) { background: #87bd4d; }
-.erp-tab:nth-child(9) { background: #7ab13f; }
+.erp-tab { margin-top: 0px; }  /* menos solapado */
+
+.erp-tab:nth-child(1) { background: rgba(248, 239, 141, 0.8); }
+.erp-tab:nth-child(2) { background: rgba(247, 235, 102, 0.8); }
+.erp-tab:nth-child(3) { background: rgba(247, 233, 78, 0.8); }
+.erp-tab:nth-child(4) { background: rgba(227, 225, 77, 0.8); }
+.erp-tab:nth-child(5) { background: rgba(208, 218, 76, 0.8); }
+.erp-tab:nth-child(6) { background: rgba(186, 209, 77, 0.8); }
+.erp-tab:nth-child(7) { background: rgba(164, 200, 75, 0.8); }
+.erp-tab:nth-child(8) { background: rgba(135, 189, 77, 0.8); }
+.erp-tab:nth-child(9) { background: rgba(122, 177, 63, 0.8); border-radius: 10px 10px 0 0; }
 
 .erp-tab:nth-child(1) { z-index: 9; }
   .erp-tab:nth-child(2) { z-index: 8; }
@@ -331,33 +321,27 @@ p {
 
   .modules{
     flex-direction: column;
+    height: fit-content;
+    min-height: 100vh;
+    justify-content: space-evenly;
   }
 
   .erp-tabs {
     width: 100%;
     height: 50%;
-    padding-right: 0;
+    padding-top: 0;
     flex-direction: column-reverse;
     justify-content: flex-start;
     align-items: flex-start;
-    background: linear-gradient(
-    to bottom,
-      #87bd4d,
-      #bad14d,
-      #d0da4c,
-      #e3e14d,
-      #f9ec58,
-      #faed63,
-      #f8ee7a
-    );
+    
   }
 
   .erp-tab {
     width: 100%;           /* más estrechas en vertical */
-    height: 350px;          /* o auto si quieres */
+    height: 50px;          /* o auto si quieres */
     margin-left: 0;
-    margin-top: -30px;      /* aquí se solapan ahora verticalmente */
-    border-radius: 25px 25px 0 0; /* puede quedar igual */
+    margin-top: 0px;      /* aquí se solapan ahora verticalmente */
+    border-radius: 0px 0px 0 0; /* puede quedar igual */
     transform: none;
     position: relative;
     padding-top: 0.5rem;
@@ -367,7 +351,7 @@ p {
   }
 
   .erp-tab:first-child {
-    margin-top: -20px;
+    margin-top: 0px;
   }
 
   /* hover en vertical */
@@ -388,12 +372,22 @@ p {
     font-size: 1.6rem;
   }
 
-  .erp-tab { margin-left: 0px; margin-top: -20px; }  /* menos solapado */
+
+
+  /* .erp-tab:nth-child(1) { background: #f8ef8d; }
+  .erp-tab:nth-child(2) { background: #f7eb66; }
+  .erp-tab:nth-child(3) { background: #f7e94e; }
+  .erp-tab:nth-child(4) { background: #e3e14d; }
+  .erp-tab:nth-child(5) { background: #d0da4c; }
+  .erp-tab:nth-child(6) { background: #bad14d; }
+  .erp-tab:nth-child(7) { background: #a4c84b; }
+  .erp-tab:nth-child(8) { background: #87bd4d; }
+  .erp-tab:nth-child(9) { background: #7ab13f; } */
 }
 
 
 .modules-text{
-  width: 50%;
+  width: 55%;
   height: 100%;
 }
 
@@ -426,7 +420,11 @@ p {
   width: 100%;
   text-align: justify;
   color: white;
-  background-color: #2d2a26;
+
+
+  background: rgba(45, 42, 38, 0.6); /* 🔥 transparencia */
+  backdrop-filter: blur(10px);       /* opcional: efecto glass */
+
 }
 
 .text-box-modules p {
@@ -438,7 +436,7 @@ p {
 .modules-phone{
   width: auto;
   height: auto;
-  max-width: 80%;
+  max-width: 90%;
   border-radius: 10px; /* Bordes redondeados para simular un teléfono */
   /*border: 8px solid black; /* Marco del celular */
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Sombra para efecto realista */
