@@ -137,8 +137,8 @@ p {
   align-items: center;
   font-weight: lighter;
   background: rgba(30, 28, 25, 0.3); /* 60% opacidad */
-  /* border-radius: 20px; */
-  padding: 25px;
+  border-radius: 25px;
+  padding: 20px;
   font-size: clamp(0.75rem, 0.7rem + 1vw, 1.5rem);
   text-align: justify;
   color: white;
@@ -320,7 +320,7 @@ p {
   transform: rotate(0);
   font-family: "tenby-five", sans-serif;
   color: #2d2a26;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 100;
   text-align: center;
    font-weight: 600;
