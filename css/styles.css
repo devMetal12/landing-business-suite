@@ -40,12 +40,12 @@ h1{
 
 
 h2, h3, h4, h5 {
-  font-family: "tenby-stencil", sans-serif;
+  font-family: "tenby-five", sans-serif;
 }
 
 p {
   /*font-family: "Rubik", serif;*/
-  font-family: "tenby-stencil", sans-serif;
+  font-family: "tenby-five", sans-serif;
   text-align: center;
   font-weight: 100;
   /* letter-spacing: 0.04em; */
@@ -102,7 +102,7 @@ p {
   backdrop-filter: blur(10px);         
   -webkit-backdrop-filter: blur(10px);  
 
-  border-radius: 16px;
+  border-radius: 25px;
 
   border: 0.1px solid rgba(255, 255, 255, 0.2);
 
@@ -136,8 +136,8 @@ p {
   justify-content: center;
   align-items: center;
   font-weight: lighter;
-  background: rgba(30, 28, 25, 0.6); /* 60% opacidad */
-  border-radius: 20px;
+  background: rgba(30, 28, 25, 0.3); /* 60% opacidad */
+  /* border-radius: 20px; */
   padding: 25px;
   font-size: clamp(0.75rem, 0.7rem + 1vw, 1.5rem);
   text-align: justify;
@@ -230,12 +230,12 @@ p {
   width: 45%;
   height: 100%;
   flex-direction: column-reverse;
-  justify-content: flex-start;
+  justify-content: start;
   align-items: flex-start;
   gap: 0;
   padding-top: 50px;
   position: relative;
-  opacity: 0;
+
   
 
   /* background: linear-gradient(
@@ -254,7 +254,7 @@ p {
 /* Cada tab como tarjeta */
 .erp-tab {
   width: 100%;
-  height: 80px;
+  height: 200px;
   margin-left: 0;
   margin-top: -20px;
   border-radius: 0px 0px 0 0;
@@ -444,7 +444,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 25px;
   font-size: 25px;
   padding: 15px;
   width: 100%;
